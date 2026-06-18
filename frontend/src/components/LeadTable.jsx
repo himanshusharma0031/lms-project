@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import './LeadTable.css'
+import BASE_URL from '../api'
 
 function LeadTable({ leads, onRefresh }) {
 
@@ -10,7 +11,7 @@ function LeadTable({ leads, onRefresh }) {
 
   //delete lead
    const deleteLead=async(id)=>{
-      await axios.delete(`http://localhost:5000/api/leads/${id}`)
+      await axios.delete(`${BASE_URL}/api/leads/${id}`)
       onRefresh()
    }
 
@@ -24,7 +25,7 @@ function LeadTable({ leads, onRefresh }) {
 
   // Status update
   const updateStatus = async (id, val) => {
-    await axios.patch(`http://localhost:5000/api/leads/${id}/status`, { status: val })
+    await axios.patch(`${BASE_URL}/api/leads/${id}/status`, { status: val })
     onRefresh()
   }
 

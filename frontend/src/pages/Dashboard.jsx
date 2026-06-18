@@ -5,6 +5,7 @@ import Charts       from '../components/Charts'
 import LeadTable    from '../components/LeadTable'
 import AddLeadModal from '../components/AddLeadModal'
 import './Dashboard.css'
+import BASE_URL from '../api'
 
 function Dashboard() {
 
@@ -12,7 +13,7 @@ function Dashboard() {
   const [modal, setModal]     = useState(false)
 
   const fetchLeads = async () => {
-    const res = await axios.get('http://localhost:5000/api/leads')
+    const res = await axios.get(`${BASE_URL}/api/leads`)
     setLeads(res.data.leads)
   }
 

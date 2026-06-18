@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import './AddLeadModal.css'
+import BASE_URL from '../api'
 
 const blank = { name:'', phone:'', email:'', service:'', source:'website', campaign:'' }
 
@@ -27,7 +28,7 @@ if (!emailRegex.test(form.email)) {
 
     setSaving(true)
     try {
-      await axios.post(`http://localhost:5000/webhook/${form.source}`, form)
+      await axios.post(`${BASE_URL}/webhook/${form.source}`, form)
       onRefresh()
       onClose()
     } catch {
