@@ -9,7 +9,7 @@ function LeadTable({ leads, onRefresh }) {
   const [status, setStatus] = useState('')
   const [search, setSearch] = useState('')
 
-  //delete lead
+  //delete led
    const deleteLead=async(id)=>{
       await axios.delete(`${BASE_URL}/api/leads/${id}`)
       onRefresh()
@@ -46,7 +46,7 @@ function LeadTable({ leads, onRefresh }) {
           <option value="converted">Converted</option>
         </select>
         <input
-          placeholder="Search naam "
+          placeholder="Search name "
           onChange={e => setSearch(e.target.value)}
         />
       </div>
