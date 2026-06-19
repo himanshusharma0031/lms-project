@@ -9,7 +9,7 @@ function LeadTable({ leads, onRefresh }) {
   const [status, setStatus] = useState('')
   const [search, setSearch] = useState('')
 
-  //delete led
+  //delete lead
    const deleteLead=async(id)=>{
       await axios.delete(`${BASE_URL}/api/leads/${id}`)
       onRefresh()

@@ -15,7 +15,7 @@ function AddLeadModal({ onClose, onRefresh }) {
 
   const save = async () => {
     if (!form.name || !form.phone || !form.email) {
-      setError('all fields required!')
+      setError('All fields required!')
       return
     }
 
@@ -28,7 +28,7 @@ if (!/^[0-9]{10}$/.test(form.phone)) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 if (!emailRegex.test(form.email)) {
-  setError(" enter Valid email")
+  setError(" Enter valid email")
   return
 }
 

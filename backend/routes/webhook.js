@@ -3,7 +3,7 @@ const router = express.Router()
 const Lead = require('../models/Lead')
 const nodemailer = require('nodemailer')
 
-// Email bhejne ka function
+
 const sendAlert = async (lead) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -27,7 +27,7 @@ const sendAlert = async (lead) => {
   })
 }
 
-// Website se lead aayegi
+// Website leads
 router.post('/website', async (req, res) => {
   try {
     const lead = await Lead.create({
@@ -41,7 +41,7 @@ router.post('/website', async (req, res) => {
   }
 })
 
-// Meta s lead ayegi
+// Meta leads
 router.post('/meta', async (req, res) => {
   try {
     const lead = await Lead.create({
@@ -55,7 +55,7 @@ router.post('/meta', async (req, res) => {
   }
 })
 
-// Google s lead ayegi
+// Google leads 
 router.post('/google', async (req, res) => {
   try {
     const lead = await Lead.create({
