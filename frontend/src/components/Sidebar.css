@@ -23,12 +23,7 @@
   border-radius: 7px;
   font-size: 13px;
   color: #94a3b8;
-  cursor: pointer;
-}
-
-.sidebar-nav:hover {
-  background: #273449;
-  color: #fff;
+  cursor: default;
 }
 
 .sidebar-nav.active {

@@ -11,13 +11,25 @@ function Dashboard() {
 
   const [leads, setLeads]     = useState([])
   const [modal, setModal]     = useState(false)
+  const [loading,setLoading] = useState(false)
 
   const fetchLeads = async () => {
+    setLoading(true)
     const res = await axios.get(`${BASE_URL}/api/leads`)
     setLeads(res.data.leads)
+    setLoading(false)
   }
 
   useEffect(() => { fetchLeads() }, [])
+
+  if (loading) {
+    return (
+      <div className="loader-wrap">
+        <div className="spinner"></div>
+        <p className="loader-text">Data Loading...</p>
+      </div>
+    )
+  }
 
   return (
     <div className="dashboard">
