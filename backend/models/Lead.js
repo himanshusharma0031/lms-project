@@ -36,5 +36,5 @@ const leadSchema = new mongoose.Schema({
     default: Date.now
   }
 })
-
+//modal
 module.exports = mongoose.model('Lead', leadSchema)
